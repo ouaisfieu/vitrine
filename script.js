@@ -28,8 +28,9 @@ fetch("subtitles.vtt")
 function filerUneRouste() {
   const body = document.body;
   const msg = document.getElementById("rouste-message");
+  const punchSound = document.getElementById("sound-punch");
 
-  body.classList.add("bump");
+  body.classList.add("bump", "zoom-punch", "flash");
 
   if (navigator.vibrate) {
     navigator.vibrate([50, 30, 50]);
@@ -38,8 +39,13 @@ function filerUneRouste() {
   msg.classList.add("rouste-visible");
   msg.classList.remove("rouste-hidden");
 
+  if (punchSound) {
+    punchSound.currentTime = 0;
+    punchSound.play();
+  }
+
   setTimeout(() => {
-    body.classList.remove("bump");
+    body.classList.remove("bump", "zoom-punch", "flash");
     msg.classList.remove("rouste-visible");
     msg.classList.add("rouste-hidden");
   }, 800);
