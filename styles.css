@@ -10,6 +10,7 @@ body {
   flex-direction: column;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.2s ease;
 }
 
 .container {
@@ -81,6 +82,26 @@ video {
 
 .bump {
   animation: bump 0.3s ease;
+}
+
+@keyframes punchzoom {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.zoom-punch {
+  animation: punchzoom 0.3s ease;
+}
+
+@keyframes flashscreen {
+  0%   { background-color: #000; }
+  50%  { background-color: #00ff99; }
+  100% { background-color: #000; }
+}
+
+.flash {
+  animation: flashscreen 0.3s ease;
 }
 
 #rouste-message {
