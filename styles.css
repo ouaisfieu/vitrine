@@ -72,27 +72,6 @@ video {
   }
 }
 
-@keyframes bump {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
-  50% { transform: translateX(10px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
-}
-
-.bump {
-  animation: bump 0.3s ease;
-}
-
-@keyframes punchzoom {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.03); }
-  100% { transform: scale(1); }
-}
-
-.zoom-punch {
-  animation: punchzoom 0.3s ease;
-}
 
 @keyframes flashscreen {
   0%   { background-color: #000; }
@@ -129,4 +108,16 @@ video {
 
 .rouste-hidden {
   opacity: 0;
+}
+
+@keyframes bumpzoom {
+  0%   { transform: translateX(0) scale(1); }
+  25%  { transform: translateX(-10px) scale(1.03); }
+  50%  { transform: translateX(10px) scale(1.02); }
+  75%  { transform: translateX(-5px) scale(1.01); }
+  100% { transform: translateX(0) scale(1); }
+}
+
+.bumpzoom {
+  animation: bumpzoom 0.3s ease;
 }
