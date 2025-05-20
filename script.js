@@ -30,7 +30,7 @@ function filerUneRouste() {
   const msg = document.getElementById("rouste-message");
   const punchSound = document.getElementById("sound-punch");
 
-  body.classList.add("bump", "zoom-punch", "flash");
+body.classList.add("bumpzoom", "flash");
 
   if (navigator.vibrate) {
     navigator.vibrate([50, 30, 50]);
@@ -45,7 +45,7 @@ function filerUneRouste() {
   }
 
   setTimeout(() => {
-    body.classList.remove("bump", "zoom-punch", "flash");
+    body.classList.remove("bumpzoom", "flash");
     msg.classList.remove("rouste-visible");
     msg.classList.add("rouste-hidden");
   }, 800);
