@@ -24,3 +24,23 @@ fetch("subtitles.vtt")
   .catch(error => {
     document.getElementById("subtitles").textContent = "Erreur chargement sous-titres : " + error.message;
   });
+
+function filerUneRouste() {
+  const body = document.body;
+  const msg = document.getElementById("rouste-message");
+
+  body.classList.add("bump");
+
+  if (navigator.vibrate) {
+    navigator.vibrate([50, 30, 50]);
+  }
+
+  msg.classList.add("rouste-visible");
+  msg.classList.remove("rouste-hidden");
+
+  setTimeout(() => {
+    body.classList.remove("bump");
+    msg.classList.remove("rouste-visible");
+    msg.classList.add("rouste-hidden");
+  }, 800);
+}
