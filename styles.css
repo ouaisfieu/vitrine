@@ -70,3 +70,42 @@ video {
     padding-bottom: 2rem;
   }
 }
+
+@keyframes bump {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.bump {
+  animation: bump 0.3s ease;
+}
+
+#rouste-message {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 255, 153, 0.85);
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: monospace;
+  padding: 1rem 2rem;
+  border: 2px solid #00ff99;
+  border-radius: 8px;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.rouste-visible {
+  opacity: 1;
+}
+
+.rouste-hidden {
+  opacity: 0;
+}
